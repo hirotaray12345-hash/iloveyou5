@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>✨ A Dreamy Confession | Will you be my Girlfriend? 💖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Poppins', 'Segoe UI', 'Playfair Display', system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+            position: relative;
+            transition: background 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        /* ========== MULTI-LAYER BACKGROUND PREMIUM ========== */
+        .bg-gradient-primary {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, #fff0f8, #ffe0f0, #ffd0e8, #eac0e8, #c9b0e0, #b0aae0);
+            background-size: 200% 200%;
+            animation: slowGradientShift 22s ease infinite;
+            z-index: 0;
+        }
+
+        @keyframes slowGradientShift {
+            0% { background-position: 0% 20%; }
+            50% { background-position: 100% 80%; }
+            100% { background-position: 0% 20%; }
+        }
+
+        /* Animated gradient overlay */
+        .animated-gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 40% 50%, rgba(255,200,220,0.3), rgba(180,140,200,0.2));
+            animation: gentlePulse 12s infinite alternate;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes gentlePulse {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        /* Soft glowing lights */
+        .glow-sphere {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 1;
+            animation: floatGlow 16s infinite alternate;
+        }
+
+        .glow1 { width: 550px; height: 550px; background: #ffb7c5; top: -150px; left: -100px; opacity: 0.5; }
+        .glow2 { width: 650px; height: 650px; background: #c5a3ff; bottom: -150px; right: -120px; opacity: 0.5; animation-duration: 20s; }
+        .glow3 { width: 450px; height: 450px; background: #ffd9a3; top: 40%; left: 60%; opacity: 0.45; animation-duration: 14s; }
+
+        @keyframes floatGlow {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            100% { transform: translate(40px, -40px) scale(1.2); opacity: 0.6; }
+        }
+
+        /* Vignette */
+        .vignette {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.2) 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Bokeh */
+        .bokeh {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,240,220,0.6), rgba(255,200,220,0.2));
+            pointer-events: none;
+            animation: floatBokeh 12s infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes floatBokeh {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            100% { transform: translate(20px, -30px) scale(1.2); opacity: 0.7; }
+        }
+
+        /* Twinkle stars */
+        .star-twinkle {
+            position: fixed;
+            pointer-events: none;
+            font-size: 12px;
+            animation: twinkleStar 3s infinite;
+            z-index: 2;
+        }
+
+        @keyframes twinkleStar {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Falling hearts */
+        .falling-heart {
+            position: fixed;
+            pointer-events: none;
+            animation: fallDown linear forwards;
+            z-index: 3;
+        }
+
+        @keyframes fallDown {
+            0% { transform: translateY(-30px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Parallax layer */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 110%;
+            height: 110%;
+            pointer-events: none;
+            z-index: 1;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 1.8rem;
+            z-index: 20;
+        }
+
+        /* Glass card premium */
+        .glass-card {
+            background: rgba(255, 248, 250, 0.3);
+            backdrop-filter: blur(18px);
+            border-radius: 72px;
+            padding: 2rem 2rem 2.2rem;
+            box-shadow: 0 35px 65px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5);
+            text-align: center;
+            animation: fadeScale 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(255,255,240,0.6);
+        }
+
+        @keyframes fadeScale {
+            0% { opacity: 0; transform: scale(0.94); backdrop-filter: blur(0); }
+            100% { opacity: 1; transform: scale(1); backdrop-filter: blur(18px); }
+        }
+
+        .main-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #e85d8f, #c94f7c, #b55b9a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+
+        .subtext {
+            font-size: 0.98rem;
+            color: #b97c8e;
+            font-weight: 500;
+            margin-bottom: 1.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* FULL BODY CHARACTERS */
+        .character-fullbody {
+            display: flex;
+            justify-content: center;
+            gap: 2.2rem;
+            flex-wrap: wrap;
+            margin: 1rem 0 1.8rem;
+            position: relative;
+        }
+
+        .animal-card {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            filter: drop-shadow(0 15px 22px rgba(0,0,0,0.15));
+        }
+
+        .animal-img {
+            width: 190px;
+            height: auto;
+            transition: all 0.2s ease;
+            display: block;
+        }
+
+        /* efek animasi tambahan */
+        .floating-heart-effect {
+            position: absolute;
+            font-size: 24px;
+            pointer-events: none;
+            animation: floatHeartUp 0.8s forwards;
+        }
+
+        @keyframes floatHeartUp {
+            0% { transform: scale(0.2) translateY(0); opacity: 1; }
+            100% { transform: scale(1) translateY(-70px); opacity: 0; }
+        }
+
+        .blush-mark {
+            position: absolute;
+            font-size: 32px;
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50%);
+            animation: blushFade 0.6s forwards;
+            pointer-events: none;
+        }
+
+        @keyframes blushFade {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+        }
+
+        /* BUTTON PREMIUM */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 2.2rem;
+            margin: 1rem 0 0.5rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .btn {
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.35rem;
+            padding: 13px 38px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.34, 1.2, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #ff8ab3, #ff5f8e);
+            color: white;
+            box-shadow: 0 12px 25px #ff6d9ecc;
+        }
+
+        .btn-yes::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.4s, height 0.4s;
+        }
+
+        .btn-yes:active::after {
+            width: 200px;
+            height: 200px;
+            opacity: 0;
+        }
+
+        .btn-no {
+            background: rgba(255, 235, 235, 0.9);
+            color: #b97c8c;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,200,200,0.8);
+        }
+
+        .glow-intense {
+            box-shadow: 0 0 24px 12px #ff98bb, 0 12px 28px #ff7ea3 !important;
+        }
+
+        /* RESULT ROMANTIC SCENE */
+        .result-container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 1.8rem;
+            animation: fadeInResult 0.9s ease;
+        }
+
+        .romantic-card {
+            background: rgba(20, 15, 35, 0.6);
+            backdrop-filter: blur(24px);
+            border-radius: 72px;
+            padding: 2.8rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(255,200,220,0.6);
+            box-shadow: 0 30px 55px rgba(0,0,0,0.3);
+        }
+
+        .yay-text {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffb8d0, #ff86ae);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            animation: scaleGlow 1s ease infinite alternate;
+        }
+
+        @keyframes scaleGlow {
+            0% { transform: scale(1); text-shadow: 0 0 5px #ffb8d0; }
+            100% { transform: scale(1.05); text-shadow: 0 0 20px #ff86ae; }
+        }
+
+        .typing-message {
+            font-size: 1.6rem;
+            color: #ffeef4;
+            font-weight: 500;
+            margin: 1rem 0;
+            min-height: 110px;
+        }
+
+        .promise-text {
+            font-size: 1.2rem;
+            color: #ffcddf;
+            margin-top: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: 1.8s;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .animal-img { width: 135px; }
+            .main-title { font-size: 1.7rem; }
+            .btn { font-size: 1rem; padding: 10px 28px; }
+            .yay-text { font-size: 2.5rem; }
+            .typing-message { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient-primary"></div>
+    <div class="animated-gradient-overlay"></div>
+    <div class="glow-sphere glow1"></div>
+    <div class="glow-sphere glow2"></div>
+    <div class="glow-sphere glow3"></div>
+    <div class="vignette"></div>
+    <div class="parallax-bg" id="parallaxBg"></div>
+    <div id="bokehContainer"></div>
+    <div id="starContainer"></div>
+    <div id="appRoot"></div>
+
+    <script>
+        // ========== CREATE BOKEH ==========
+        function createBokeh() {
+            const container = document.getElementById('bokehContainer');
+            for (let i = 0; i < 38; i++) {
+                const b = document.createElement('div');
+                b.classList.add('bokeh');
+                let size = 30 + Math.random() * 150;
+                b.style.width = size + 'px';
+                b.style.height = size + 'px';
+                b.style.left = Math.random() * 100 + '%';
+                b.style.top = Math.random() * 100 + '%';
+                b.style.animationDuration = 7 + Math.random() * 14 + 's';
+                b.style.animationDelay = Math.random() * 6 + 's';
+                b.style.opacity = 0.2 + Math.random() * 0.45;
+                container.appendChild(b);
+            }
+        }
+        createBokeh();
+
+        // ========== CREATE SPARKLE STARS ==========
+        function createStars() {
+            const starContainer = document.getElementById('starContainer');
+            for (let i = 0; i < 95; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star-twinkle');
+                star.innerHTML = ['✨', '⭐', '🌟', '💫', '⚡'][Math.floor(Math.random() * 5)];
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.fontSize = 9 + Math.random() * 16 + 'px';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                star.style.animationDuration = 2 + Math.random() * 4 + 's';
+                starContainer.appendChild(star);
+            }
+        }
+        createStars();
+
+        // ========== FALLING HEARTS INTERVAL ==========
+        let fallingHeartsInterval;
+        function startFallingHearts() {
+            if (fallingHeartsInterval) clearInterval(fallingHeartsInterval);
+            fallingHeartsInterval = setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'falling-heart';
+                heart.innerHTML = ['❤️', '💖', '💗', '💕', '💞', '💘'][Math.floor(Math.random() * 6)];
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.fontSize = 16 + Math.random() * 34 + 'px';
+                heart.style.animationDuration = 2.5 + Math.random() * 4 + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 4500);
+            }, 320);
+        }
+
+        // ========== PARALLAX ==========
+        document.addEventListener('mousemove', (e) => {
+            const layer = document.getElementById('parallaxBg');
+            if (layer) {
+                const x = (e.clientX / window.innerWidth - 0.5) * 16;
+                const y = (e.clientY / window.innerHeight - 0.5) * 10;
+                layer.style.transform = `translate(${x}px, ${y}px)`;
+            }
+        });
+
+        // ========== ANIMAL FULL BODY (HIGH QUALITY) ==========
+        const catImg = "https://cdn-icons-png.flaticon.com/512/1998/1998625.png";
+        const bunnyImg = "https://cdn-icons-png.flaticon.com/512/616/616430.png";
+        
+        let currentScene = 'confession';
+        let yesScale = 1;
+        let noApproachCount = 0;
+        let yesButton, noButton;
+        let animalIntervals = [];
+        let randomActionInterval;
+        
+        const root = document.getElementById('appRoot');
+        
+        // Helper create heart around animal
+        function createHeartAround(x, y) {
+            const heartSpan = document.createElement('div');
+            heartSpan.className = 'floating-heart-effect';
+            heartSpan.innerHTML = '❤️';
+            heartSpan.style.left = x + 'px';
+            heartSpan.style.top = y + 'px';
+            heartSpan.style.fontSize = '22px';
+            document.body.appendChild(heartSpan);
+            setTimeout(() => heartSpan.remove(), 800);
+        }
+        
+        // Random action untuk hewan (lompat, muter, malu)
+        function applyRandomAction(animalDiv) {
+            const img = animalDiv.querySelector('.animal-img');
+            if (!img) return;
+            const rand = Math.random();
+            if (rand < 0.4) {
+                img.style.animation = 'hopAnim 0.35s ease';
+                setTimeout(() => img.style.animation = '', 350);
+                const rect = animalDiv.getBoundingClientRect();
+                createHeartAround(rect.left + 45, rect.top + 55);
+            } else if (rand < 0.65) {
+                img.style.transform = 'rotate(7deg) scale(1.02)';
+                setTimeout(() => img.style.transform = '', 250);
+            } else if (rand < 0.85) {
+                const blushDiv = document.createElement('div');
+                blushDiv.className = 'blush-mark';
+                blushDiv.innerHTML = '😳💕';
+                animalDiv.appendChild(blushDiv);
+                setTimeout(() => blushDiv.remove(), 700);
+                img.style.filter = 'drop-shadow(0 0 6px #ff8888)';
+                setTimeout(() => img.style.filter = '', 500);
+            }
+        }
+        
+        // Idle animation: kedip mata (opacity) & nafas (scale)
+        function startIdleAnimations() {
+            const animals = document.querySelectorAll('.animal-card');
+            animals.forEach(animal => {
+                const img = animal.querySelector('.animal-img');
+                if (!img) return;
+                let breathInterval = setInterval(() => {
+                    if (currentScene !== 'confession') return;
+                    img.style.transform = 'scale(1.02) translateY(-3px)';
+                    setTimeout(() => { if(img) img.style.transform = 'scale(1) translateY(0)'; }, 800);
+                }, 2200);
+                let blinkInterval = setInterval(() => {
+                    if (currentScene !== 'confession') return;
+                    img.style.opacity = '0.7';
+                    setTimeout(() => { if(img) img.style.opacity = '1'; }, 110);
+                }, 2800);
+                animal.breathTimer = breathInterval;
+                animal.blinkTimer = blinkInterval;
+                animalIntervals.push(breathInterval, blinkInterval);
+            });
+        }
+        
+        function stopIdleAnimations() {
+            const animals = document.querySelectorAll('.animal-card');
+            animals.forEach(animal => {
+                if (animal.breathTimer) clearInterval(animal.breathTimer);
+                if (animal.blinkTimer) clearInterval(animal.blinkTimer);
+            });
+        }
+        
+        function startRandomActions() {
+            if (randomActionInterval) clearInterval(randomActionInterval);
+            randomActionInterval = setInterval(() => {
+                if (currentScene !== 'confession') return;
+                const animals = document.querySelectorAll('.animal-card');
+                animals.forEach(animal => applyRandomAction(animal));
+            }, 3400);
+        }
+        
+        // Tombol NO gerak smooth & makin cepat
+        function moveNoSmooth() {
+            if (!noButton || currentScene !== 'confession') return;
+            const area = document.querySelector('.button-group');
+            if (!area) return;
+            const areaRect = area.getBoundingClientRect();
+            const btnRect = noButton.getBoundingClientRect();
+            const maxX = (areaRect.width - btnRect.width) * 0.7;
+            const maxY = (areaRect.height - btnRect.height) * 0.6;
+            let speed = Math.min(1 + noApproachCount * 0.13, 2.4);
+            let randX = (Math.random() - 0.5) * maxX * 1.8 * speed;
+            let randY = (Math.random() - 0.5) * maxY * 1.6 * speed;
+            randX = Math.min(Math.max(randX, -maxX), maxX);
+            randY = Math.min(Math.max(randY, -maxY), maxY);
+            noButton.style.transition = `transform 0.13s cubic-bezier(0.2, 1.1, 0.4, 1)`;
+            noButton.style.transform = `translate(${randX}px, ${randY}px)`;
+        }
+        
+        function enlargeYesAndAnimalHappy() {
+            if (!yesButton) return;
+            yesScale += 0.075;
+            if (yesScale > 2.6) yesScale = 2.6;
+            yesButton.style.transform = `scale(${yesScale})`;
+          
